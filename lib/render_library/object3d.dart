@@ -74,7 +74,6 @@ class _Object3DState extends State<Object3D> {
 //    print(update.globalPosition);
     Offset offset = update.globalPosition;
     _translateVector = Vector3(offset.dx - 100, offset.dy - 270, 0);
-    print("hey");
     setState(() {
       angleX += update.delta.dy;
       if (angleX > 360)
@@ -100,8 +99,8 @@ class _Object3DState extends State<Object3D> {
                 angleY,
                 angleZ,
                 widget.zoom,
-                _translateVector,
-//                widget.translate ?? Vector3.zero(),
+//                _translateVector,
+                widget.translate ?? Vector3.zero(),
                 widget.rotate ?? Vector3.zero())),
         onPanUpdate: _drag,
 //      onHorizontalDragUpdate: (DragUpdateDetails update) => _dragY(update),
